@@ -42,6 +42,10 @@ The v0 model has no parser. Files in `examples/` are documentation fixtures only
 
 `src/Seal.Matrix.fst` encodes explicit v0 decision cases for measure, open, seal, and transition operations. It proves capability checks dominate evidence and receipt checks, evidence checks dominate receipt checks where evidence is required, and disallowed state combinations cannot return `Allow`.
 
+## SEAL-Core v0 Review Packet
+
+The current review packet is in [docs/SEAL_CORE_V0_REVIEW_PACKET.md](docs/SEAL_CORE_V0_REVIEW_PACKET.md).
+
 ## Non-Claims
 
 SEAL-Core v0 is:
