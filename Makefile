@@ -1,4 +1,4 @@
-CORE_MODULES := src/Seal.Types.fst src/Seal.Policy.fst src/Seal.Gate.fst src/Seal.Proofs.fst
+CORE_MODULES := src/Seal.Types.fst src/Seal.Policy.fst src/Seal.Gate.fst src/Seal.Proofs.fst src/Seal.Matrix.fst
 
 .PHONY: toolchain verify extract test clean
 

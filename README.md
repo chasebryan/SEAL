@@ -38,6 +38,10 @@ The v0 model has no parser. Files in `examples/` are documentation fixtures only
 
 `make extract` is non-fatal in v0. It reports `SEAL_EXTRACTION_NOT_READY` when `krml` is unavailable or the model is not ready for extraction.
 
+## Proof Matrix
+
+`src/Seal.Matrix.fst` encodes explicit v0 decision cases for measure, open, seal, and transition operations. It proves capability checks dominate evidence and receipt checks, evidence checks dominate receipt checks where evidence is required, and disallowed state combinations cannot return `Allow`.
+
 ## Non-Claims
 
 SEAL-Core v0 is:
