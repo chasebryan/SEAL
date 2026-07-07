@@ -30,6 +30,7 @@ fstar.exe \
   src/Seal.Types.fst \
   src/Seal.Policy.fst \
   src/Seal.Gate.fst \
-  src/Seal.Proofs.fst
+  src/Seal.Proofs.fst \
+  src/Seal.Matrix.fst
 
 echo "SEAL_CORE_VERIFIED"

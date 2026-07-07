@@ -21,4 +21,13 @@ The F* model is intentionally direct. `Seal.Policy` defines the operation requir
 3. missing receipt denies before allow
 4. allow is returned only after all required conditions are present
 
+Decision-order matrix:
+
+| Operation | Required capability | Evidence required | Receipt required | Allow condition |
+| --- | --- | --- | --- | --- |
+| `OpMeasure` | `CapMeasure` | no | no | capability present |
+| `OpOpen` | `CapOpen` | yes | no | capability present and evidence valid |
+| `OpSeal` | `CapSeal` | yes | no | capability present and evidence valid |
+| `OpTransition` | `CapTransition` | yes | yes | capability present, evidence valid, and receipt valid |
+
 There is no parser, no network path, no daemon, no plugin system, no package manager, and no seL4 integration in v0.
