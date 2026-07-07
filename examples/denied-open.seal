@@ -1,0 +1,9 @@
+# Documentation fixture only. There is no parser in SEAL-Core v0.
+
+subject: 0
+operation: OpOpen
+capabilities:
+  - CapOpen
+evidence: missing
+receipt: missing
+decision: DenyMissingEvidence

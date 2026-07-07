@@ -1,0 +1,8 @@
+/build/
+/generated/c/
+*.checked
+*.checked.lax
+*.fst-in
+*.krml
+*~
+.DS_Store

@@ -1,2 +1,42 @@
 # SEAL
-Substrate Evidence Authority Layer: minimal operator substrate for sealed evidence, capability-bound authority, and fail-closed system design on seL4-class foundations.
+
+Substrate Evidence Authority Layer Zero
+
+SEAL is a minimal operator substrate for sealed evidence, capability-bound authority, and fail-closed system design on seL4-class foundations.
+
+SEAL-Core v0 is a terminal-native normative authority core, not an OS.
+
+Trusted core logic is written in F*/Low*.
+
+C extraction is deferred until a compatible KaRaMeL toolchain is pinned. KaRaMeL is optional for SEAL-Core v0 verification.
+
+## Commands
+
+```sh
+scripts/bootstrap-toolchain.sh
+make toolchain
+make verify
+make test
+```
+
+## Current Prototype
+
+SEAL-Core v0 models a small fail-closed authority gate in F*. The gate evaluates a subject operation against a capability set, evidence state, and transition receipt state.
+
+The v0 model has no parser. Files in `examples/` are documentation fixtures only.
+
+`make extract` is non-fatal in v0. It reports `SEAL_EXTRACTION_NOT_READY` when `krml` is unavailable or the model is not ready for extraction.
+
+## Non-Claims
+
+SEAL-Core v0 is:
+
+- not seL4
+- not seL4-equivalent
+- not kernel isolation
+- not production authorized
+- not externally certified
+- not government approved
+- not whole-system formally verified
+
+No production, certification, government approval, kernel isolation, or whole-system formal verification claim is made by this repository.
