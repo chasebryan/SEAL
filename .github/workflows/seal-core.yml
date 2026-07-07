@@ -1,0 +1,45 @@
+name: SEAL-Core
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  fstar-verification:
+    runs-on: ubuntu-latest
+
+    env:
+      FSTAR_VERSION: v2026.03.24
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install host packages
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y ca-certificates curl git gzip make tar
+
+      - name: Install F*
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/fstar-bin"
+          curl -fsSL https://aka.ms/install-fstar \
+            | bash -s -- \
+                --release \
+                --version "$FSTAR_VERSION" \
+                --dest "$RUNNER_TEMP/fstar" \
+                --link-dir "$RUNNER_TEMP/fstar-bin"
+          echo "$RUNNER_TEMP/fstar-bin" >> "$GITHUB_PATH"
+
+      - name: Check F* version
+        run: fstar.exe --version
+
+      - name: Verify SEAL-Core
+        run: |
+          set -euo pipefail
+          make toolchain
+          make verify
+          make test
+          git diff --check
