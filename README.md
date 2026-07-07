@@ -19,6 +19,17 @@ make verify
 make test
 ```
 
+## CI
+
+```sh
+make verify
+make test
+```
+
+GitHub Actions verifies the F* authority model on push and pull request.
+
+C extraction remains deferred until a compatible KaRaMeL toolchain is pinned.
+
 ## Current Prototype
 
 SEAL-Core v0 models a small fail-closed authority gate in F*. The gate evaluates a subject operation against a capability set, evidence state, and transition receipt state.
